@@ -1,0 +1,78 @@
+//A classificação do índice de massa corporal (IMC), pode ajudar a identificar obesidade ou desnutrição em crianças, adolescentes, adultos e idosos.
+
+Além de saber qual é o seu IMC, essa calculadora também indica qual deve ser o seu peso ideal e quantas calorias você deve ingerir para alcançar a sua melhor forma, e assim melhorar sua qualidade de vida, garantindo o seu bem estar.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>//Utilizei a Biblioteca math.h para utilizar o comando operador pow(n,n), para exponenciar a altura por 2.
+
+int main()
+{
+    float massa, altura, IMC;
+
+    printf("Digite sua Massa (Kg): ");
+    scanf("%f",&massa);
+    printf("Digite sua Altura (Metros): ");
+    scanf("%f",&altura);
+
+    IMC = massa/(pow(altura,2));//Aqui utilizei o comando pow(n,n) para exponenciar a variável altura por 2, para chegar ao calculo de IMC.
+
+    printf("-----------------------------------\n");//Aqui criei uma formatação de uma linha divisória para separar os resultados.
+    printf("Seu IMC e: %0.2f\n",IMC);
+
+    if(IMC<17)
+    {
+        printf("Muito abaixo do peso.\n");
+    }
+    else
+    {
+        if(IMC>17 && IMC<18.49)
+        {
+            printf("Abaixo do peso.\n");
+        }
+        else
+        {
+            if(IMC>18.5 && IMC<24.99)
+            {
+                printf("Peso normal.\n");
+            }
+            else
+            {
+                if(IMC>25 && IMC<29.99)
+                {
+                    printf("Acima do peso.\n");
+                }
+                else
+                {
+                    if(IMC>30 && IMC<34.99)
+                    {
+                        printf("voce esta Obeso.\n");
+                    }
+                    else
+                    {
+                        if(IMC>35 && IMC<39.99)
+                        {
+                            printf("Obesidade Severa.\n");
+                        }
+                        else
+                        {
+                            if(IMC>40)
+                            {
+                                printf("voce esta em Obesidade MORBIDA.\n");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return 0;
+}
+
+//	
+IMC	PESO
+Magreza	< 18.5	< 59.9 Kg
+Normal	18.5 a 24.9	59.9 a 80.7 Kg
+Sobrepeso	24.9 a 30	80.7 a 97.2 Kg
+Obesidade	> 30	> 97.2 Kg
